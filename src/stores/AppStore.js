@@ -10,7 +10,7 @@ class Store {
         {
             "id": '10446',
             "label": "Филиал 1",
-            'link-api': 'https://localhost:8000/filial_1',
+            'linkapi': 'https://localhost:8000/filial_1',
             "children": [
                 {
                     "id": '10447',
