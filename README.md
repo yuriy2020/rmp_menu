@@ -20,4 +20,4 @@ npm run build
 
 
 ### апи дерева
-https://mui.com/x/api/tree-view/rich-tree-view/
+https://mui.com/x/api/tree-view/simple-tree-view/
