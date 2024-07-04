@@ -6,58 +6,40 @@ class Store {
         makeAutoObservable(this)
     }
 
+    API_URL = 'http://localhost:8000/phonebook/main_info/'
+
     FAKE_DATA = [
         {
-            "id": '10446',
+            "id": '1',
             "label": "Филиал 1",
-            'props': {
-                'linkapi': 'https://localhost:8000/filial_1',
-                'zzz': 'yyy',
-                'xxx': 111
-            },
             "children": [
                 {
-                    "id": '10447',
+                    "id": '2',
                     "label": "Подразделение 1",
-                    "children": []
+                    "children": [],
+                    'filials': 1,
                 },
                 {
-                    "id": '10448',
+                    "id": '3',
                     "label": "Подразделение 2",
-                    'props': {
-                        'linkapi': 'https://localhost:8000/filial_2',
-                        'zzz': 'yyy',
-                        'xxx': 222
-                    },
+                    'filials': 1,
+                    "type": "podrazdel",
                     "children": [
                         {
-                            "id": '10449',
-                            "label": "Подразделение 3",
+                            "id": '4',
+                            "label": "Отдел 1",
+                            'filials': 1,
+                            'parent': 3,
+                            "type": "otdel",
                             "children": [
                                 {
-                                    "id": '10450',
-                                    "label": "Филиал 2",
-                                    "children": [
-                                        {
-                                            "id": '10451',
-                                            "label": "Подразделение 4",
-                                            "children": []
-                                        },
-                                        {
-                                            "id": '10452',
-                                            "label": "Подразделение 5",
-                                            "children": [
-                                                {
-                                                    "id": '10453',
-                                                    "label": "Подразделение 6",
-                                                }
-                                            ]
-
-                                        },
-
-                                    ]
+                                    "id": '5',
+                                    'filials': 1,
+                                    'parent': 4,
+                                    "label": "Кабинет 1",
+                                    "type": "kabinet",
                                 },
-                            ]
+                            ],
                         }
                     ]
 
@@ -65,30 +47,55 @@ class Store {
 
             ]
         },
-        //     {
-        //         "id": 10450,
-        //         "label": "Филиал 2",
-        //         "children": [
-        //             {
-        //                 "id": 10451,
-        //                 "label": "Подразделение 4",
-        //                 "children": []
-        //             },
-        //             {
-        //                 "id": 10452,
-        //                 "label": "Подразделение 5",
-        //                 "children": [
-        //                     {
-        //                         "id": 10453,
-        //                         "label": "Подразделение 6",
-        //                     }
-        //                 ]
-        //
-        //             },
-        //
-        //         ]
-        //     },
+
     ];
+
+    columns = [
+        {
+            field: 'fio_name',
+            headerName: 'ФИО',
+            type: 'string',
+        },
+        {
+            field: 'doljnost',
+            headerName: 'Должность',
+            type: 'string',
+            flex: 1,
+        },
+        {
+            field: 'room',
+            headerName: 'Кабинет',
+            type: 'string',
+            flex: 1,
+        },
+        {
+            field: 'KSPD',
+            headerName: 'Внутр.номер',
+            flex: 1,
+        },
+        {
+            field: 'email',
+            headerName: 'Почта',
+            type: 'string',
+            flex: 1,
+        },
+        {
+            field: 'phone_city',
+            headerName: 'Городской номер',
+            type: 'string',
+            flex: 1,
+        },
+        {
+            field: 'phone_mobile',
+            headerName: 'Мобильный номер',
+            type: 'string',
+            flex: 1,
+        },
+    ]
+
+    DATA = []
+
+    aaa = 10
 
 }
 
